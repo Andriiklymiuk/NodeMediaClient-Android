@@ -206,15 +206,20 @@ public class NodeCameraView extends FrameLayout implements GLSurfaceView.Rendere
                     || (Build.MODEL.endsWith("SCH-I959"))
                     || (Build.MODEL.endsWith("MEIZU MX3")))
                     && focusModes.contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE)) {
+                    Log.d("log autofocus","0")
                 parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
             } else if (focusModes.contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO)) {
+                Log.d("log autofocus","1")
                 parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO);
             }
         } else {
+            Log.d("log autofocus","2")
             List<String> fms = parameters.getSupportedFocusModes();
             if (fms.contains(Camera.Parameters.FOCUS_MODE_AUTO)) {
+                 Log.d("log autofocus","3")
                 parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
             }
+             Log.d("log autofocus","4")
             mCamera.autoFocus(null);
         }
         mCamera.setParameters(parameters);
