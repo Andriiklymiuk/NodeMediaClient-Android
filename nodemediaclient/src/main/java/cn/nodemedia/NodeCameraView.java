@@ -194,6 +194,7 @@ public class NodeCameraView extends FrameLayout implements GLSurfaceView.Rendere
 
     public int setAutoFocus(boolean isAutoFocus) {
         this.isAutoFocus = isAutoFocus;
+        Log.d("log autofocus","123")
         if (mCamera == null) {
             return -1;
         }
@@ -222,6 +223,7 @@ public class NodeCameraView extends FrameLayout implements GLSurfaceView.Rendere
              Log.d("log autofocus","4")
             mCamera.autoFocus(null);
         }
+        Log.d("log autofocus","78")
         mCamera.setParameters(parameters);
         return 0;
     }
@@ -251,6 +253,7 @@ public class NodeCameraView extends FrameLayout implements GLSurfaceView.Rendere
     }
 
     public int switchCamera() {
+        Log.d("switchCamera pressed","here")
         if (mCameraNum <= 1) {
             return -1;
         }
